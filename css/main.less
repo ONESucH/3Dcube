@@ -1,0 +1,67 @@
+BODY {
+  background: #F2F2F2;
+  perspective: 500px;
+  perspective-origin: center -5em;
+  overflow: hidden;
+  margin: 25em 0;
+}
+.side,
+.container {
+  width: 10em;
+  height: 10em;
+}
+
+.container {
+  margin: 5em auto 0;
+  transform-style: preserve-3d;
+  animation: rotate 10s infinite linear;
+}
+.side {
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  border: .15em solid #00e0ff;
+  border-radius: 3em;
+  opacity: .5;
+  transform-style: preserve-3d;
+}
+.side:before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10em;
+  height: 10em;
+  transform: translateZ(2em) rotateZ(45deg);
+  box-shadow: 0 0 10px 15px #00e0ff inset;
+  border: 2px solid #00e0ff;
+}
+.back {
+  transform: translateZ(-5em) rotateY(180deg);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+.left {
+  transform: translateX(-5em) rotateY(-90deg);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+.right {
+  transform: translateX(5em) rotateY(90deg);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+.top {
+  transform: translateY(-5em) rotateX(90deg);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+.bottom {
+  transform: translateY(5em) rotateX(-90deg);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+.front {
+  transform: translateZ(5em);
+  background: url(http://s40.radikal.ru/i090/1101/68/e3d7a6825d14.gif) center;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotateX(360deg) rotateY(-360deg) rotateZ(360deg);
+  }
+}
